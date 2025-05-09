@@ -2,19 +2,8 @@
 <html>
 <head>
   <title>chefDesk - Food Waste Prediction</title>
-  <style>
-    .banner {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-    }
-  </style>
 </head>
 <body>
-
-  <!-- 🔽 BANNER IMAGE -->
-  <img src="https://surya272004.github.io/chefDesk/banner.png" class="banner" alt="chefDesk Banner" />
-
   <h1>chefDesk</h1>
 
   <form id="predict-form">
@@ -27,7 +16,7 @@
   <h3 id="result"></h3>
 
   <script>
-    const apiUrl = "https://abcd1234.ngrok.io/predict"; // Replace with your actual ngrok URL
+    const apiUrl = "https://abcd1234.ngrok.io/predict"; // Replace with your ngrok link
 
     document.getElementById("predict-form").addEventListener("submit", async (e) => {
       e.preventDefault();
