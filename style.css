@@ -1,38 +1,81 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>chefDesk - Food Waste Prediction</title>
-</head>
-<body>
-  <h1>chefDesk</h1>
+body {
+  background: #f5f7fa;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  <form id="predict-form">
-    <label>Sales: <input type="number" id="sales" /></label><br>
-    <label>Weather: <input type="number" id="weather" /></label><br>
-    <label>Guests: <input type="number" id="guests" /></label><br>
-    <button type="submit">Predict Waste</button>
-  </form>
+.App {
+  max-width: 420px;
+  margin: 50px auto;
+  padding: 36px 28px 28px 28px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(56, 176, 0, 0.10);
+}
 
-  <h3 id="result"></h3>
+h2 {
+  color: #38b000;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  text-align: center;
+}
 
-  <script>
-    const apiUrl = "https://abcd1234.ngrok.io/predict"; // Replace with your ngrok link
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-    document.getElementById("predict-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const sales = parseFloat(document.getElementById("sales").value);
-      const weather = parseFloat(document.getElementById("weather").value);
-      const guests = parseFloat(document.getElementById("guests").value);
+label {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 6px;
+}
 
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sales, weather, guests }),
-      });
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #c4c4c4;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f8fff8;
+  margin-bottom: 6px;
+  transition: border 0.2s;
+}
 
-      const data = await response.json();
-      document.getElementById("result").innerText = `Predicted Waste: ${data.predicted_waste}`;
-    });
-  </script>
-</body>
-</html>
+input[type="number"]:focus {
+  border: 1.5px solid #38b000;
+  outline: none;
+  background: #f2fff2;
+}
+
+button[type="submit"] {
+  background: #38b000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background: #267600;
+}
+
+.result {
+  margin-top: 24px;
+  padding: 16px;
+  background: #eaffea;
+  border: 1px solid #38b000;
+  border-radius: 8px;
+  color: #267600;
+  font-size: 1.15rem;
+  text-align: center;
+  font-weight: bold;
+}
