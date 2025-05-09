@@ -5,19 +5,6 @@ body {
   padding: 0;
 }
 
-.hero-banner {
-  background: url('Healthy-Pad-Thai-d069588.jpg') no-repeat center center;
-  background-size: cover;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-}
-
 .App {
   max-width: 420px;
   margin: 50px auto;
