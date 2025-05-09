@@ -1,38 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>chefDesk - Food Waste Prediction</title>
+  <title>chefDesk</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>chefDesk</h1>
 
-  <form id="predict-form">
-    <label>Sales: <input type="number" id="sales" /></label><br>
-    <label>Weather: <input type="number" id="weather" /></label><br>
-    <label>Guests: <input type="number" id="guests" /></label><br>
-    <button type="submit">Predict Waste</button>
-  </form>
+  <div class="hero-banner">
+    chefDesk
+  </div>
 
-  <h3 id="result"></h3>
+  <div class="App">
+    <h2>Food Waste Prediction</h2>
+    <form id="prediction-form">
+      <label for="feature1">Feature 1:</label>
+      <input type="number" id="feature1" name="feature1" required>
 
-  <script>
-    const apiUrl = "https://abcd1234.ngrok.io/predict"; // Replace with your ngrok link
+      <label for="feature2">Feature 2:</label>
+      <input type="number" id="feature2" name="feature2" required>
 
-    document.getElementById("predict-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const sales = parseFloat(document.getElementById("sales").value);
-      const weather = parseFloat(document.getElementById("weather").value);
-      const guests = parseFloat(document.getElementById("guests").value);
+      <button type="submit">Predict</button>
+    </form>
+    <div class="result" id="result"></div>
+  </div>
 
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sales, weather, guests }),
-      });
-
-      const data = await response.json();
-      document.getElementById("result").innerText = `Predicted Waste: ${data.predicted_waste}`;
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
