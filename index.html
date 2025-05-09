@@ -1,166 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>chefDesk | AI Food Waste Prediction</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #222;
-    }
-    header {
-      background: #38b000;
-      color: #fff;
-      padding: 48px 0 36px 0;
-      text-align: center;
-    }
-    .logo {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.1rem;
-      letter-spacing: 1px;
-      font-weight: 400;
-    }
-    header p {
-      margin-top: 18px;
-      font-size: 1.18rem;
-      font-weight: 400;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-btn {
-      background: #fff;
-      color: #38b000;
-      padding: 14px 36px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin-top: 30px;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .cta-btn:hover {
-      background: #38b000;
-      color: #fff;
-      border: 2px solid #fff;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 50px 0 40px 0;
-      gap: 32px;
-    }
-    .feature {
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.09);
-      padding: 32px 24px;
-      max-width: 320px;
-      flex: 1 1 260px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    .feature:hover {
-      transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 8px 24px rgba(56,176,0,0.12);
-    }
-    .feature h3 {
-      color: #38b000;
-      margin-bottom: 14px;
-      font-size: 1.2rem;
-    }
-    .feature p {
-      font-size: 1rem;
-      color: #444;
-    }
-    .about-section {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      padding: 36px 26px;
-      text-align: center;
-    }
-    .about-section h2 {
-      color: #38b000;
-      margin-bottom: 16px;
-      font-size: 1.3rem;
-    }
-    .about-section p {
-      color: #333;
-      font-size: 1.07rem;
-      margin-bottom: 0;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 18px 0 12px 0;
-      font-size: 0.98rem;
-      letter-spacing: 0.5px;
-      margin-top: 30px;
-    }
-    @media (max-width: 900px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-section {
-        padding: 28px 10px;
-      }
-    }
-  </style>
+  <title>chefDesk - Food Waste Prediction</title>
 </head>
 <body>
-  <header>
-    <div class="logo">chefDesk</div>
-    <h1>AI Food Waste Prediction</h1>
-    <p>
-      Harness the power of artificial intelligence to predict and reduce food waste.<br>
-      Make smarter decisions, save money, and help the planet.
-    </p>
-    <a href="#features"><button class="cta-btn">Learn More</button></a>
-  </header>
+  <h1>chefDesk</h1>
 
-  <section class="features" id="features">
-    <div class="feature">
-      <h3>Smart Predictions</h3>
-      <p>AI analyzes your data to forecast food demand and waste, helping you optimize inventory and reduce losses.</p>
-    </div>
-    <div class="feature">
-      <h3>Real-Time Insights</h3>
-      <p>Interactive dashboards and alerts keep you updated on potential waste and actionable recommendations.</p>
-    </div>
-    <div class="feature">
-      <h3>Environmental Impact</h3>
-      <p>Track how much waste and CO<sub>2</sub> emissions you’ve saved by making informed decisions.</p>
-    </div>
-  </section>
+  <form id="predict-form">
+    <label>Sales: <input type="number" id="sales" /></label><br>
+    <label>Weather: <input type="number" id="weather" /></label><br>
+    <label>Guests: <input type="number" id="guests" /></label><br>
+    <button type="submit">Predict Waste</button>
+  </form>
 
-  <section class="about-section">
-    <h2>About chefDesk</h2>
-    <p>
-      chefDesk is an AI-powered platform designed to help restaurants, retailers, and households predict and reduce food waste. By leveraging advanced machine learning, chefDesk empowers users to make data-driven choices, optimize inventory, and contribute to a more sustainable future.
-    </p>
-  </section>
+  <h3 id="result"></h3>
 
-  <footer>
-    &copy; 2025 chefDesk | AI Food Waste Prediction. Built with &hearts; for a sustainable future.
-  </footer>
+  <script>
+    const apiUrl = "https://abcd1234.ngrok.io/predict"; // Replace with your ngrok link
+
+    document.getElementById("predict-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const sales = parseFloat(document.getElementById("sales").value);
+      const weather = parseFloat(document.getElementById("weather").value);
+      const guests = parseFloat(document.getElementById("guests").value);
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sales, weather, guests }),
+      });
+
+      const data = await response.json();
+      document.getElementById("result").innerText = `Predicted Waste: ${data.predicted_waste}`;
+    });
+  </script>
 </body>
 </html>
