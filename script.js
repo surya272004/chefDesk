@@ -1,19 +1,18 @@
-// script.js
-document.getElementById('predictForm').addEventListener('submit', function(e) {
+document.getElementById('weekDataForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const sales = parseFloat(document.getElementById('salesInput').value);
-  const guests = parseFloat(document.getElementById('guestsInput').value);
-  const eventType = document.getElementById('eventTypeInput').value;
-
-  // Simple formula or placeholder
-  let predictedWaste = (sales * 0.1) + (guests * 0.05);
-
-  if (eventType.toLowerCase() === 'party') {
-    predictedWaste *= 1.2; // increase waste for party
+  // Get all 7 day sales inputs
+  let sales = [];
+  for (let i = 1; i <=7; i++) {
+    sales.push(parseFloat(document.querySelector(`input[name=day${i}]`).value));
   }
 
-  const resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = `<strong>Predicted Waste:</strong> ${predictedWaste.toFixed(2)} kg`;
+  // Example: Simple AI prediction (you can replace this formula with real ML later)
+  let avgSales = sales.reduce((a,b) => a + b, 0) / sales.length;
+  let predictedWaste = avgSales * 0.1; // assuming 10% waste by default
+
+  // Display result
+  let resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = `<h3>Predicted Weekly Waste: ${predictedWaste.toFixed(2)} units</h3>`;
   resultDiv.style.display = 'block';
 });
