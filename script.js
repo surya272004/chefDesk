@@ -1,13 +1,23 @@
-document.getElementById('startPlanBtn').addEventListener('click', () => {
-  document.getElementById('introSection').style.display = 'none';
-  document.getElementById('formSection').style.display = 'block';
+document.getElementById("startPlanBtn").addEventListener("click", () => {
+  document.getElementById("formSection").classList.remove("hidden");
+  document.getElementById("formSection").scrollIntoView({ behavior: 'smooth' });
 });
 
-document.getElementById('weekDataForm').addEventListener('submit', function(e) {
+document.getElementById("weeklyForm").addEventListener("submit", (e) => {
   e.preventDefault();
-  const data = [...new FormData(this).values()].map(Number);
-  const avg = data.reduce((a,b)=>a+b,0)/data.length;
-  const predictedWaste = Math.max(0, Math.round(avg * 0.1)); // simple 10% waste prediction
-  document.getElementById('result').innerHTML = `<h3>Predicted Weekly Waste: ${predictedWaste} kg</h3>`;
-  document.getElementById('result').style.display = 'block';
+
+  const sales = [
+    parseFloat(document.querySelector('input[name="day1"]').value),
+    parseFloat(document.querySelector('input[name="day2"]').value),
+    parseFloat(document.querySelector('input[name="day3"]').value),
+    parseFloat(document.querySelector('input[name="day4"]').value),
+    parseFloat(document.querySelector('input[name="day5"]').value),
+    parseFloat(document.querySelector('input[name="day6"]').value),
+    parseFloat(document.querySelector('input[name="day7"]').value),
+  ];
+
+  const avg = sales.reduce((a, b) => a + b, 0) / sales.length;
+  const predictedWaste = (avg * 0.15).toFixed(2);
+
+  document.getElementById("result").innerText = `Predicted weekly waste: ${predictedWaste} units`;
 });
