@@ -2,36 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>chefDesk - AI Food Waste Prediction</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- START PLAN PAGE -->
-  <div class="intro-section" id="introSection">
-    <h2>Welcome to chefDesk!</h2>
-    <p>
-      Our AI helps restaurants predict food waste to reduce costs & save resources.  
-      By analyzing your weekly sales, we help reduce unnecessary purchases & save money.
-    </p>
-    <button id="startPlanBtn">Start Your Plan</button>
-  </div>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">chef<span>Desk</span></div>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#profile">Profile</a></li>
+    </ul>
+  </nav>
 
-  <!-- FORM PAGE (hidden initially) -->
-  <div class="form-section" id="formSection" style="display: none;">
-    <h2>Enter Weekly Sales Data</h2>
-    <form id="weekDataForm">
-      <label>Day 1 Sales: <input type="number" name="day1" required></label><br>
-      <label>Day 2 Sales: <input type="number" name="day2" required></label><br>
-      <label>Day 3 Sales: <input type="number" name="day3" required></label><br>
-      <label>Day 4 Sales: <input type="number" name="day4" required></label><br>
-      <label>Day 5 Sales: <input type="number" name="day5" required></label><br>
-      <label>Day 6 Sales: <input type="number" name="day6" required></label><br>
-      <label>Day 7 Sales: <input type="number" name="day7" required></label><br><br>
+  <!-- Hero Section -->
+  <section id="home">
+    <img src="banner.jpg" alt="Food Image">
+    <button id="startPlanBtn">Start Your Plan</button>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About chefDesk</h2>
+    <p>chefDesk helps you predict food waste using AI. Input weekly data to get accurate predictions and save resources!</p>
+  </section>
+
+  <!-- Form Section -->
+  <section id="formSection" class="hidden">
+    <h2>Enter Your Weekly Sales Data</h2>
+    <form id="weeklyForm">
+      <label>Day 1 Sales: <input type="number" name="day1" required></label>
+      <label>Day 2 Sales: <input type="number" name="day2" required></label>
+      <label>Day 3 Sales: <input type="number" name="day3" required></label>
+      <label>Day 4 Sales: <input type="number" name="day4" required></label>
+      <label>Day 5 Sales: <input type="number" name="day5" required></label>
+      <label>Day 6 Sales: <input type="number" name="day6" required></label>
+      <label>Day 7 Sales: <input type="number" name="day7" required></label>
       <button type="submit">Predict Waste</button>
     </form>
-    <div id="result" class="prediction-result" style="display:none;"></div>
-  </div>
+    <div id="result"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@chefdesk.com</p>
+  </section>
 
   <script src="script.js"></script>
 </body>
