@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>chefDesk - Food Waste Prediction</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header style="background:#2a9d8f; color:white; padding:15px; text-align:center;">
-    <h1>chefDesk</h1>
+  <header>
+    <h1>chefDesk - AI Food Waste Prediction</h1>
   </header>
 
   <div class="container">
-    <h2>Predict Food Waste</h2>
-    <form id="predictForm">
-      <input type="number" id="salesInput" placeholder="Enter Sales (units)" required>
-      <input type="number" id="guestsInput" placeholder="Number of Guests" required>
-      <input type="text" id="eventTypeInput" placeholder="Event Type (optional)">
+    <h2>Enter Weekly Data</h2>
+    <form id="weekDataForm">
+      <label>Day 1 Sales: <input type="number" name="day1" required></label><br>
+      <label>Day 2 Sales: <input type="number" name="day2" required></label><br>
+      <label>Day 3 Sales: <input type="number" name="day3" required></label><br>
+      <label>Day 4 Sales: <input type="number" name="day4" required></label><br>
+      <label>Day 5 Sales: <input type="number" name="day5" required></label><br>
+      <label>Day 6 Sales: <input type="number" name="day6" required></label><br>
+      <label>Day 7 Sales: <input type="number" name="day7" required></label><br><br>
       <button type="submit">Predict Waste</button>
     </form>
 
