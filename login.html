@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login | Food Waste Prediction</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Login - chefDesk</title>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <style>
+    body { font-family: Arial; text-align:center; margin-top:100px; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Login</h1>
-    <div id="g_id_onload"
-         data-client_id="YOUR_GOOGLE_CLIENT_ID"
-         data-login_uri="https://your-website-url/index.html"
-         data-auto_prompt="false">
-    </div>
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="pill"
-         data-theme="outline"
-         data-text="sign_in_with"
-         data-size="large">
-    </div>
-    <p>Use Google to sign in to access Food Waste Prediction</p>
+  <h1>Welcome to chefDesk</h1>
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-login_uri="index.html"
+       data-auto_prompt="false">
+  </div>
+
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
   </div>
 </body>
 </html>
