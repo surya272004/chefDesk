@@ -7,21 +7,25 @@
 
 body {
   font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  color: #333;
 }
 
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -32,26 +36,29 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: black;
-  padding: 8px 15px;
+  color: #333;
+  padding: 8px 20px;
   border-radius: 20px;
+  transition: background 0.3s, color 0.3s;
 }
 
-nav ul li a.active,
-nav ul li a:hover {
-  background: black;
+nav ul li a:hover,
+nav ul li a.active {
+  background: green;
   color: white;
 }
 
+/* Hero section */
 #home {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 85vh;
+  overflow: hidden;
 }
 
 #home img {
@@ -62,26 +69,44 @@ nav ul li a:hover {
 
 #home button {
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 15px 30px;
-  background: black;
+  padding: 15px 35px;
+  background: green;
   color: white;
+  font-size: 18px;
   border: none;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
 }
 
+#home button:hover {
+  background: darkgreen;
+}
+
+/* About & Contact sections */
 #about, #contact {
-  padding: 40px 20px;
+  padding: 60px 40px;
   text-align: center;
+  background: white;
+  margin: 40px auto;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
+/* Form section */
 #formSection {
-  padding: 40px 20px;
+  padding: 60px 40px;
   text-align: center;
-  background: #f6f6f6;
+  background: white;
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 
 .hidden {
@@ -96,25 +121,26 @@ form {
 
 form label {
   margin: 10px 0;
-  width: 250px;
+  width: 300px;
   text-align: left;
 }
 
 form input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 form button {
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 14px 30px;
   background: green;
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 form button:hover {
