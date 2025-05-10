@@ -1,62 +1,7 @@
-/* style.css */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f8f9fa;
-  color: #333;
-}
-
-.container {
-  max-width: 400px;
-  margin: 80px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-
-.container:hover {
-  transform: translateY(-5px);
-}
-
-h1 {
-  margin-bottom: 20px;
-  color: #2a9d8f;
-}
-
-input, button {
-  width: 90%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
-}
-
-button {
-  background: #2a9d8f;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #21867a;
-}
-
-a {
-  text-decoration: none;
-  color: #2a9d8f;
-  font-size: 14px;
-}
-
-.prediction-result {
-  background: #e9f5f3;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-}
+body { font-family: Arial, sans-serif; background: #f4f4f4; }
+header { background: #2a9d8f; color: white; padding: 15px; text-align: center; }
+.container { background: white; max-width: 500px; margin: 40px auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+input { width: 100%; padding: 8px; margin: 5px 0; }
+button { background: #e76f51; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+button:hover { background: #d55d3e; }
+.prediction-result { margin-top: 20px; background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; }
