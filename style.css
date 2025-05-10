@@ -1,25 +1,20 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "Segoe UI", sans-serif;
-  line-height: 1.6;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6f2ff; /* Light blue background */
 }
 
 header {
+  background-color: white;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -27,61 +22,58 @@ header {
   color: green;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
 nav a {
+  margin-left: 20px;
   text-decoration: none;
   color: black;
-  padding: 8px 16px;
-  border-radius: 30px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
 }
 
-nav a.active,
-nav a:hover {
-  background: black;
+nav a.active {
+  background-color: black;
   color: white;
 }
 
 .hero {
-  background-color: #eaeaea;
-  padding: 100px 20px;
   text-align: center;
-}
-
-.hero-content {
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 100px 20px;
+  background-color: #eeeeee;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 48px;
   margin-bottom: 20px;
 }
 
-.btn {
-  padding: 10px 30px;
-  background: black;
+.hero button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: black;
   color: white;
   border: none;
-  text-decoration: none;
   border-radius: 25px;
-  font-size: 1rem;
+  cursor: pointer;
 }
 
-section {
-  padding: 60px 20px;
+.section {
+  background-color: white;
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-section#profile {
-  background: #f5f5f5;
+.section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background: #f5f5f5;
+  font-size: 14px;
+  color: #555;
 }
