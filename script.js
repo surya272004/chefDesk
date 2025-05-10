@@ -1,23 +1,16 @@
-document.getElementById("startPlanBtn").addEventListener("click", () => {
-  document.getElementById("formSection").classList.remove("hidden");
-  document.getElementById("formSection").scrollIntoView({ behavior: 'smooth' });
+// Smooth scrolling for navbar links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
 
-document.getElementById("weeklyForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const sales = [
-    parseFloat(document.querySelector('input[name="day1"]').value),
-    parseFloat(document.querySelector('input[name="day2"]').value),
-    parseFloat(document.querySelector('input[name="day3"]').value),
-    parseFloat(document.querySelector('input[name="day4"]').value),
-    parseFloat(document.querySelector('input[name="day5"]').value),
-    parseFloat(document.querySelector('input[name="day6"]').value),
-    parseFloat(document.querySelector('input[name="day7"]').value),
-  ];
-
-  const avg = sales.reduce((a, b) => a + b, 0) / sales.length;
-  const predictedWaste = (avg * 0.15).toFixed(2);
-
-  document.getElementById("result").innerText = `Predicted weekly waste: ${predictedWaste} units`;
+// Click event for the "Donate Food" button
+const donateBtn = document.querySelector('.btn');
+donateBtn.addEventListener('click', function() {
+  alert('Thank you for your interest in donating food!');
 });
