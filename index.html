@@ -3,34 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Food Donate</title>
+  <title>ChefDesk - Food Donation</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <nav class="navbar">
+    <nav>
       <div class="logo">Food <span>Donate</span></div>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#profile">Profile</a></li>
-      </ul>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#profile">Profile</a>
+      </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="images/hero.jpg" alt="Children sharing food" />
-    <a href="#" class="btn">DONATE FOOD</a>
+  <section id="home" class="hero-section">
+    <img src="images/hero.jpg" alt="Hero Image" class="hero-image" />
+    <div class="hero-content">
+      <button class="btn">DONATE FOOD</button>
+    </div>
   </section>
 
-  <section class="quote">
-    <p>“Cutting food waste is a delicious way of saving money.”</p>
+  <section id="about">
+    <h2>About</h2>
+    <p>Our mission is to reduce food waste and feed those in need.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email us at: support@chefdesk.org</p>
   </section>
 
   <section id="profile">
     <h2>My Profile</h2>
     <p>This is a sample profile section.</p>
   </section>
+
+  <footer>
+    <p>© 2025 ChefDesk. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
