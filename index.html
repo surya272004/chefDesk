@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Waste Prediction Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Food Waste Prediction</h1>
+    <form id="predictForm">
+      <input type="number" id="salesInput" placeholder="Enter Sales (units)" required>
+      <input type="number" id="guestsInput" placeholder="Number of Guests" required>
+      <input type="text" id="eventTypeInput" placeholder="Event Type (optional)">
+      <button type="submit">Predict Waste</button>
+    </form>
+    <div id="result" class="prediction-result" style="display:none;"></div>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
