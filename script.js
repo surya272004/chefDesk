@@ -1,22 +1,13 @@
-// Show the form when user clicks "Start Your Plan"
-document.getElementById('startPlanBtn').addEventListener('click', function() {
+document.getElementById('startPlanBtn').addEventListener('click', () => {
+  document.getElementById('introSection').style.display = 'none';
   document.getElementById('formSection').style.display = 'block';
-  this.style.display = 'none'; // hide the button
 });
 
-// Prediction logic
 document.getElementById('weekDataForm').addEventListener('submit', function(e) {
   e.preventDefault();
-
-  let sales = [];
-  for (let i = 1; i <=7; i++) {
-    sales.push(parseFloat(document.querySelector(`input[name=day${i}]`).value));
-  }
-
-  let avgSales = sales.reduce((a,b) => a + b, 0) / sales.length;
-  let predictedWaste = avgSales * 0.1; // simple AI logic (can improve later)
-
-  let resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = `<h3>Predicted Waste for Next Week: ${predictedWaste.toFixed(2)} units</h3>`;
-  resultDiv.style.display = 'block';
+  const data = [...new FormData(this).values()].map(Number);
+  const avg = data.reduce((a,b)=>a+b,0)/data.length;
+  const predictedWaste = Math.max(0, Math.round(avg * 0.1)); // simple 10% waste prediction
+  document.getElementById('result').innerHTML = `<h3>Predicted Weekly Waste: ${predictedWaste} kg</h3>`;
+  document.getElementById('result').style.display = 'block';
 });
