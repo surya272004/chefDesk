@@ -6,21 +6,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>chefDesk - AI Food Waste Prediction</h1>
-  </header>
 
-  <div class="intro-section">
+  <!-- START PLAN PAGE -->
+  <div class="intro-section" id="introSection">
     <h2>Welcome to chefDesk!</h2>
     <p>
-      Our AI-powered platform helps restaurants and kitchens predict food waste
-      based on your weekly data. Reduce costs, save resources, and help the environment!
+      Our AI helps restaurants predict food waste to reduce costs & save resources.  
+      By analyzing your weekly sales, we help reduce unnecessary purchases & save money.
     </p>
     <button id="startPlanBtn">Start Your Plan</button>
   </div>
 
+  <!-- FORM PAGE (hidden initially) -->
   <div class="form-section" id="formSection" style="display: none;">
-    <h2>Enter Weekly Data</h2>
+    <h2>Enter Weekly Sales Data</h2>
     <form id="weekDataForm">
       <label>Day 1 Sales: <input type="number" name="day1" required></label><br>
       <label>Day 2 Sales: <input type="number" name="day2" required></label><br>
