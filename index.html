@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>chefDesk - Food Waste Prediction</title>
+  <title>chefDesk - AI Food Waste Prediction</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,7 +10,16 @@
     <h1>chefDesk - AI Food Waste Prediction</h1>
   </header>
 
-  <div class="container">
+  <div class="intro-section">
+    <h2>Welcome to chefDesk!</h2>
+    <p>
+      Our AI-powered platform helps restaurants and kitchens predict food waste
+      based on your weekly data. Reduce costs, save resources, and help the environment!
+    </p>
+    <button id="startPlanBtn">Start Your Plan</button>
+  </div>
+
+  <div class="form-section" id="formSection" style="display: none;">
     <h2>Enter Weekly Data</h2>
     <form id="weekDataForm">
       <label>Day 1 Sales: <input type="number" name="day1" required></label><br>
@@ -22,10 +31,7 @@
       <label>Day 7 Sales: <input type="number" name="day7" required></label><br><br>
       <button type="submit">Predict Waste</button>
     </form>
-
     <div id="result" class="prediction-result" style="display:none;"></div>
-
-    <a href="login.html">Logout</a>
   </div>
 
   <script src="script.js"></script>
